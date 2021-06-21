@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/LiangLuDeng/wheels/issues"
   },
-  "homepage": "https://github.com/LiangLuDeng/wheels#readme"
+  "homepage": "https://github.com/LiangLuDeng/wheels#readme",
+  "dependencies": {
+    "vue": "^2.6.14"
+  }
 }
