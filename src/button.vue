@@ -1,12 +1,37 @@
 <template>
-  <button class="g-button">按钮</button> 
+  <button class="g-button" :class="{[`icon-${iconposition}`]: true}">
+    <g-icon class="icon-loading" v-if="icon" name="loading"></g-icon>
+    <g-icon class="icon" v-if="icon" :name="icon"></g-icon>
+    <div class="content">
+      <slot/>  
+    </div>
+  </button> 
 </template>
 <script>
 export default {
   name:'',
+  props:{
+    icon:{},
+    iconposition:{
+      type: String,
+      default: 'left',
+      validator (value) {
+        //校验器
+        return ['left', 'right'].includes(value)
+      }
+    }
+  }
 }
 </script>
 <style lang="scss">
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
   .g-button {
     font-size: var(--font-size);
     height: var(--button-height);
@@ -14,7 +39,31 @@ export default {
     border-radius: var(--border-radius);
     border: 1px solid var(--border-color);
     background: var(--button-bg);
+    // margin: 10px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    > .icon {
+      order: 2;
+    }
+    > .content{
+      order: 1;
+    }
+
+    &.icon-left {
+      > .icon {
+        order: 1;
+      }
+      > .content{
+        order: 2;
+      }
+    }
+    .icon-loading {
+      animation: spin 1.3s infinite linear;
+    }
   }
+
   .g-button:hover {
     border-color: var(--border-color-hover);
   }
