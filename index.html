@@ -16,13 +16,14 @@
 
     html {
       --button-height: 32px;
-      --font-size: 16px;
+      --font-size: 14px;
       --button-bg: white;
       --button-active-bg: #eee;
       --border-radius: 4px;
       --color: #333;
       --border-color: #999;
       --border-color-hover: #666;
+      --active-color: rgb(46, 145, 211);
     }
 
     #app {
@@ -40,14 +41,21 @@
 
 <body>
   <div id="app">
-    <g-button icon="bad">我爱js
-      
+    <g-button :loading="loading1" @click="loading1 = !loading1" icon="bad">踩踩
     </g-button>
-    <g-button icon="double-arrow-left" iconposition="left">left
+    <g-button :loading="loading2" @click="loading2 = !loading2"  icon="double-arrow-left" iconposition="left">后退
     </g-button>
-    <g-button icon="set" iconposition="right">right
-      
+    <g-button :loading="loading3" @click="loading3 = !loading3" icon="set" iconposition="right">设置
     </g-button>
+
+    <g-button-group>
+      <g-button :loading="loading1" @click="loading1 = !loading1" icon="bad">踩踩
+      </g-button>
+      <g-button :loading="loading3" @click="loading3 = !loading3">中间
+      </g-button>
+      <g-button :loading="loading2" @click="loading2 = !loading2"  icon="double-arrow-left" iconposition="left">后退
+      </g-button>
+    </g-button-group>
   </div>
   <script src="./src/app.js"></script>
   <script src="//at.alicdn.com/t/font_2624053_1ar69chf6d3h.js"></script>
