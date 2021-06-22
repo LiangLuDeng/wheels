@@ -43,7 +43,7 @@
   <div id="app">
     <g-button :loading="loading1" @click="loading1 = !loading1" icon="bad">踩踩
     </g-button>
-    <g-button :loading="loading2" @click="loading2 = !loading2"  icon="double-arrow-left" iconposition="left">后退
+    <g-button :loading="true" iconposition="left">加载中
     </g-button>
     <g-button :loading="loading3" @click="loading3 = !loading3" icon="set" iconposition="right">设置
     </g-button>
@@ -56,6 +56,7 @@
       <g-button :loading="loading2" @click="loading2 = !loading2"  icon="double-arrow-left" iconposition="left">后退
       </g-button>
     </g-button-group>
+    <div id="test"></div>
   </div>
   <script src="./src/app.js"></script>
   <script src="//at.alicdn.com/t/font_2624053_1ar69chf6d3h.js"></script>

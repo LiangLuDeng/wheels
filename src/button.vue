@@ -64,7 +64,7 @@ export default {
       }
     }
     .icon-loading {
-      animation: spin 1s infinite linear;
+      animation: spin 1.1s infinite linear;
     }
   }
 
