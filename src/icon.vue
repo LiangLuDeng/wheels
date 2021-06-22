@@ -4,6 +4,7 @@
   </svg>
 </template>
 <script>
+import './svg'
 export default {
   name:'icon',
   props:{
@@ -15,6 +16,7 @@ export default {
  .g-icon {
     width: 1em;
     height: 1em;
-    font-size: 1em;
+    font-size: 1.2em;
+    padding: 0.5px;
   }
 </style>
