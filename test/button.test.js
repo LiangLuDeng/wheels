@@ -36,7 +36,7 @@ describe("Button", () => {
     vm.$destroy();
   });
 
-  it("icon 默认的 order 是 1", () => {
+  it("icon 默认的 order 是 1吗", () => {
     const div = document.createElement("div");
     document.body.appendChild(div);
     const Constructor = Vue.extend(Button);
