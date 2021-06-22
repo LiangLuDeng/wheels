@@ -51,7 +51,7 @@ describe("Button", () => {
     vm.$destroy();
   });
 
-  it("设置 iconPosition 可以改变 order", () => {
+  it("设置 iconPosition 可以改变 order的吗", () => {
     const div = document.createElement("div");
     document.body.appendChild(div);
     const Constructor = Vue.extend(Button);
