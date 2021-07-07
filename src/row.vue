@@ -29,6 +29,7 @@
     },
     mounted () {
       this.$children.forEach((vm) => {
+        // 把间隙传给子节点
         vm.gutter = this.gutter
       })
     }

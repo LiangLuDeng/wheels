@@ -30,6 +30,7 @@
     },
     data () {
       return {
+        // gutter从父节点传过来
         gutter: 0,
       }
     },
