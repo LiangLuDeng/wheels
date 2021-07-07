@@ -1,6 +1,7 @@
 <template>
   <div class="wrapper" :class="{ error: etype === 'error' }">
     <input
+      :placeholder="placeholder"
       :value="value"
       type="text"
       class="g-input"
@@ -28,6 +29,9 @@ export default {
     value: {
       type: String,
       default: "",
+    },
+    placeholder: {
+      type: String,
     },
     emsg: {
       type: String,
@@ -78,6 +82,9 @@ $border-hover-color: #666;
       border-color: #bbb;
       color: #bbb;
       cursor: not-allowed;
+    }
+    &::placeholder{
+      color: #ccc;
     }
   }
   &.error {

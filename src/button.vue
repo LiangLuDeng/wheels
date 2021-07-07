@@ -12,7 +12,7 @@
 import Icon from './icon'
 // Vue.component('g-icon', Icon)
 export default {
-  name:'',
+  name:'GWButon',
   components:{
     'g-icon': Icon,
   },
