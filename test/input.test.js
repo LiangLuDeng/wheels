@@ -33,14 +33,17 @@ describe('事件的测试', () => {
   afterEach(() => {
     vm.$destroy();
   })
-  it("可以触发onChange事件", () => {
+  it("可以触发各种事件", () => {
     vm = new Constructor({}).$mount();
     const callback = sinon.fake();
-    vm.$on('change', callback)
-    // 触发input事件
-    let event = new Event('change')
-    const cElement = vm.$el.querySelector("input");
-    cElement.dispatchEvent(event);
-    expect(callback).to.have.been.calledWith(event);
+    ['focus', 'blur', 'change', 'input'].forEach(eName => {
+      vm.$on(eName, callback)
+      // 触发input事件
+      let event = new Event(eName)
+      const cElement = vm.$el.querySelector("input");
+      cElement.dispatchEvent(event);
+      expect(callback).to.have.been.calledWith(event);
+    })
+    
   });
 })

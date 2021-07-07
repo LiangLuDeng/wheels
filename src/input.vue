@@ -1,6 +1,15 @@
 <template>
   <div class="wrapper" :class="{ error: error }">
-    <input :value="value" type="text" class="g-input" :disabled="disabled" />
+    <input
+      :value="value"
+      type="text"
+      class="g-input"
+      :disabled="disabled"
+      @change="$emit('change', $event)"
+      @focus="$emit('focus', $event)"
+      @blur="$emit('blur', $event)"
+      @input="$emit('input', $event)"
+    />
     <template v-if="etype">
       <icon :name="etype" :class="inputclassname(etype)"></icon>
       <span v-if="emsg" :class="inputclassname(etype)">{{ emsg }}</span>
@@ -20,21 +29,21 @@ export default {
       type: String,
       default: "",
     },
-    emsg:{
+    emsg: {
       type: String,
-      default:'',
+      default: "",
     },
     disabled: {
       type: Boolean,
       default: false,
     },
-    etype:{
+    etype: {
       type: String,
     },
   },
-  methods:{
-    inputclassname: (etype) =>  etype ?`icon-${etype}` : '',
-  }
+  methods: {
+    inputclassname: (etype) => (etype ? `icon-${etype}` : ""),
+  },
 };
 </script>
 
