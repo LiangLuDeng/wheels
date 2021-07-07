@@ -40,9 +40,11 @@ describe('事件的测试', () => {
       vm.$on(eName, callback)
       // 触发input事件
       let event = new Event(eName)
+      Object.defineProperty(event, 'target',{value: {value: `${eName}_event`,enumerable: true}})
       const cElement = vm.$el.querySelector("input");
       cElement.dispatchEvent(event);
-      expect(callback).to.have.been.calledWith(event);
+      console.log(event.target)
+      expect(callback).to.have.been.calledWith(event.target.value);
     })
     
   });
