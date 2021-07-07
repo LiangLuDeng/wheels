@@ -16,5 +16,6 @@ module.exports = {
       "no-mixed-spaces-and-tabs": [0],
       //未定义变量不能使用
       "no-undef": 0,
+      
   }
 };

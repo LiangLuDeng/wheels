@@ -24,6 +24,10 @@
       --border-color: #999;
       --border-color-hover: #666;
       --active-color: rgb(46, 145, 211);
+      --warn-color: #f18900;
+      --error-color: #f03333;
+      --info-color: rgb(46, 145, 211);
+      --success-color: rgb(63, 214, 50);
     }
 
     #app {
@@ -32,6 +36,9 @@
 
     body {
       font-size: var(--font-size);
+    }
+    .block{
+      margin: 20px;
     }
   </style>
   <style>
@@ -54,6 +61,13 @@
       <g-button :loading="loading3" @click="loading3 = !loading3"  icon="double-right" iconposition="right">下一页
       </g-button>
     </g-button-group>
+    <div class="block">
+      <g-input value="行了"></g-input>
+      <!-- <g-input disabled value="disabled"></g-input>
+      <g-input etype="error" emsg="姓名不能少于两个字"></g-input>
+      <g-input etype="info" emsg="请阅读之后谨慎填写"></g-input> -->
+
+    </div>
   </div>
   <script src="./src/app.js"></script>
   <!-- <script src="//at.alicdn.com/t/font_2624053_1ar69chf6d3h.js"></script> -->
