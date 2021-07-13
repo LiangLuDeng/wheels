@@ -39,6 +39,7 @@
   .row{
     display: flex;
     flex-wrap: wrap;
+    border: 1px solid pink;
     &.align-left {
       justify-content: flex-start;
     }

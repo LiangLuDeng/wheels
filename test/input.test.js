@@ -43,7 +43,7 @@ describe('事件的测试', () => {
       Object.defineProperty(event, 'target',{value: {value: `${eName}_event`,enumerable: true}})
       const cElement = vm.$el.querySelector("input");
       cElement.dispatchEvent(event);
-      console.log(event.target)
+      // console.log(event.target)
       expect(callback).to.have.been.calledWith(event.target.value);
     })
     
