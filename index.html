@@ -31,36 +31,46 @@
     }
 
     #app {
-      margin: 20px;
+      margin: 20px 0px;
     }
 
     body {
       font-size: var(--font-size);
     }
-    .block{
-      margin: 20px;
+
+    .block {
+      margin: 20px 0px;
+      padding: 20px 5px;
+      box-shadow: 1px 2px 10px rgba(0,25,0,.2);
+    }
+    .demo {
+      min-height: 100px;
+      border: 1px dotted;
     }
   </style>
   <style>
-   
+
   </style>
 </head>
 
 <body>
   <div id="app">
-    <g-button>按钮</g-button>
-    <g-button :loading="loading1" @click="loading1 = !loading1">点击加载
-    </g-button>
-    <g-button icon="setting" iconposition="right">图标
-    </g-button>
-    <g-button-group>
-      <g-button :loading="loading2" @click="loading2 = !loading2 " icon="double-left">上一页
+    <div class="block">
+      <g-button>按钮</g-button>
+      <g-button :loading="loading1" @click="loading1 = !loading1">点击加载
       </g-button>
-      <g-button>更多
+      <g-button icon="setting" iconposition="right">图标
       </g-button>
-      <g-button :loading="loading3" @click="loading3 = !loading3"  icon="double-right" iconposition="right">下一页
-      </g-button>
-    </g-button-group>
+      <g-button-group>
+        <g-button :loading="loading2" @click="loading2 = !loading2 " icon="double-left">上一页
+        </g-button>
+        <g-button>更多
+        </g-button>
+        <g-button :loading="loading3" @click="loading3 = !loading3"  icon="double-right" iconposition="right">下一页
+        </g-button>
+      </g-button-group>
+    </div>
+    
     <div class="block">
       <g-input placeholder="请输入"  v-model="message"></g-input>
       {{message}}
@@ -71,9 +81,33 @@
     </div>
     <div class="block">
       <g-row>
-        <g-col span="10">1</g-col>
-        <g-col span="14">2</g-col>
+        <g-col class="demo" span="10">col 1</g-col>
+        <g-col class="demo" span="14">col 2</g-col>
       </g-row>
+    </div>
+    <div class="block">
+      <g-layout >
+        <g-header class="demo">header</g-header>
+        <g-layout>
+          <g-sider collapsible="true" class="demo">sider</g-sider>
+          <g-content class="demo">content</g-content>
+        </g-layout>
+        <g-footer class="demo">footer</g-footer>
+      </g-layout>
+    </div>
+    <div class="block">
+      <g-layout >
+        <g-header class="demo">header</g-header>
+        <g-layout>
+          <g-sider class="demo" collapsible="true">sider1</g-sider>
+          <g-content>
+            <g-header class="demo">header1</g-header>
+            <g-content class="demo">content1</g-content>
+            <g-footer class="demo">footer1</g-footer>
+          </g-content>
+        </g-layout>
+        <g-footer class="demo">footer</g-footer>
+      </g-layout>
     </div>
   </div>
   <script src="./src/app.js"></script>
